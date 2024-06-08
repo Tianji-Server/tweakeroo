@@ -60,10 +60,6 @@ public class Callbacks
         Hotkeys.BREAKING_RESTRICTION_MODE_LINE.getKeybind().setCallback(callbackGeneric);
         Hotkeys.BREAKING_RESTRICTION_MODE_PLANE.getKeybind().setCallback(callbackGeneric);
         Hotkeys.COPY_SIGN_TEXT.getKeybind().setCallback(callbackGeneric);
-        Hotkeys.FLY_PRESET_1.getKeybind().setCallback(callbackGeneric);
-        Hotkeys.FLY_PRESET_2.getKeybind().setCallback(callbackGeneric);
-        Hotkeys.FLY_PRESET_3.getKeybind().setCallback(callbackGeneric);
-        Hotkeys.FLY_PRESET_4.getKeybind().setCallback(callbackGeneric);
         Hotkeys.FREE_CAMERA_PLAYER_INPUTS.getKeybind().setCallback((action, key) -> {
             IConfigBoolean config = Configs.Generic.FREE_CAMERA_PLAYER_INPUTS;
             config.toggleBooleanValue();

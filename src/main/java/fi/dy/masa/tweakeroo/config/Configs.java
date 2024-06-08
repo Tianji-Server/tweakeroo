@@ -155,10 +155,6 @@ public class Configs implements IConfigHandler
                 FAST_RIGHT_CLICK_COUNT,
                 FILL_CLONE_LIMIT,
                 FLY_DECELERATION_FACTOR,
-                FLY_SPEED_PRESET_1,
-                FLY_SPEED_PRESET_2,
-                FLY_SPEED_PRESET_3,
-                FLY_SPEED_PRESET_4,
                 GAMMA_OVERRIDE_VALUE,
                 HAND_RESTOCK_PRE_THRESHOLD,
                 HOTBAR_SLOT_CYCLE_MAX,
@@ -375,17 +371,6 @@ public class Configs implements IConfigHandler
         );
     }
 
-    public static ConfigDouble getActiveFlySpeedConfig()
-    {
-        switch (Configs.Internal.FLY_SPEED_PRESET.getIntegerValue())
-        {
-            case 0:  return Configs.Generic.FLY_SPEED_PRESET_1;
-            case 1:  return Configs.Generic.FLY_SPEED_PRESET_2;
-            case 2:  return Configs.Generic.FLY_SPEED_PRESET_3;
-            case 3:  return Configs.Generic.FLY_SPEED_PRESET_4;
-            default: return Configs.Generic.FLY_SPEED_PRESET_1;
-        }
-    }
 
     public static void loadFromFile()
     {

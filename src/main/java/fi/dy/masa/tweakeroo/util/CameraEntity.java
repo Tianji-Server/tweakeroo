@@ -63,18 +63,6 @@ public class CameraEntity extends ClientPlayerEntity
         }
     }
 
-    private static double getMoveSpeed()
-    {
-        double base = 0.07;
-
-        if (FeatureToggle.TWEAK_FLY_SPEED.getBooleanValue())
-        {
-            base = Configs.getActiveFlySpeedConfig().getDoubleValue();
-        }
-
-        return base * 10;
-    }
-
     private void handleMotion(double forward, double up, double strafe)
     {
         float yaw = this.getYaw();
