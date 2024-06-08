@@ -66,7 +66,6 @@ public class CameraEntity extends ClientPlayerEntity
     private void handleMotion(double forward, double up, double strafe)
     {
         float yaw = this.getYaw();
-        double scale = getMoveSpeed();
         double xFactor = Math.sin(yaw * Math.PI / 180.0);
         double zFactor = Math.cos(yaw * Math.PI / 180.0);
 
