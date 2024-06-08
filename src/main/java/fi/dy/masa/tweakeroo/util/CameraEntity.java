@@ -59,7 +59,6 @@ public class CameraEntity extends ClientPlayerEntity
             cameraMotion = MiscUtils.calculatePlayerMotionWithDeceleration(cameraMotion, 0.15, 0.4);
             double forward = sprinting ? cameraMotion.x * 3 : cameraMotion.x;
 
-            camera.handleMotion(forward, cameraMotion.y, cameraMotion.z);
         }
     }
 
