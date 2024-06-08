@@ -511,26 +511,6 @@ public class Callbacks
                     InfoUtils.printActionbarMessage("tweakeroo.message.toggled", prettyName, strStatus);
                 }
             }
-            else if (key == FeatureToggle.TWEAK_FLY_SPEED.getKeybind())
-            {
-                if (enabled)
-                {
-                    String strPreset = preGreen + (Configs.Internal.FLY_SPEED_PRESET.getIntegerValue() + 1) + rst;
-                    String strSpeed = String.format("%s%.3f%s", preGreen, Configs.getActiveFlySpeedConfig().getDoubleValue(), rst);
-                    InfoUtils.printActionbarMessage("tweakeroo.message.toggled_fly_speed_on", strStatus, strPreset, strSpeed);
-                }
-                else
-                {
-                    PlayerEntity player = MinecraftClient.getInstance().player;
-
-                    if (player != null)
-                    {
-                        player.getAbilities().setFlySpeed(0.05f);
-                    }
-
-                    InfoUtils.printActionbarMessage("tweakeroo.message.toggled", prettyName, strStatus);
-                }
-            }
             else if (key == FeatureToggle.TWEAK_PLACEMENT_LIMIT.getKeybind())
             {
                 if (enabled)
