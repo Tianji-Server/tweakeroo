@@ -105,7 +105,6 @@ public class Callbacks
 
         FeatureToggle.TWEAK_AFTER_CLICKER.getKeybind().setCallback(KeyCallbackAdjustableFeature.createCallback(FeatureToggle.TWEAK_AFTER_CLICKER));
         FeatureToggle.TWEAK_BREAKING_GRID.getKeybind().setCallback(KeyCallbackAdjustableFeature.createCallback(FeatureToggle.TWEAK_BREAKING_GRID));
-        FeatureToggle.TWEAK_FLY_SPEED.getKeybind().setCallback(KeyCallbackAdjustableFeature.createCallback(FeatureToggle.TWEAK_FLY_SPEED));
         FeatureToggle.TWEAK_HOTBAR_SLOT_CYCLE.getKeybind().setCallback(KeyCallbackAdjustableFeature.createCallback(FeatureToggle.TWEAK_HOTBAR_SLOT_CYCLE));
         FeatureToggle.TWEAK_HOTBAR_SLOT_RANDOMIZER.getKeybind().setCallback(KeyCallbackAdjustableFeature.createCallback(FeatureToggle.TWEAK_HOTBAR_SLOT_RANDOMIZER));
         FeatureToggle.TWEAK_PLACEMENT_GRID.getKeybind().setCallback(KeyCallbackAdjustableFeature.createCallback(FeatureToggle.TWEAK_PLACEMENT_GRID));
@@ -311,26 +310,6 @@ public class Callbacks
                     return true;
                 }
             }
-            else if (key == Hotkeys.FLY_PRESET_1.getKeybind())
-            {
-                this.setFlySpeedPreset(0);
-                return true;
-            }
-            else if (key == Hotkeys.FLY_PRESET_2.getKeybind())
-            {
-                this.setFlySpeedPreset(1);
-                return true;
-            }
-            else if (key == Hotkeys.FLY_PRESET_3.getKeybind())
-            {
-                this.setFlySpeedPreset(2);
-                return true;
-            }
-            else if (key == Hotkeys.FLY_PRESET_4.getKeybind())
-            {
-                this.setFlySpeedPreset(3);
-                return true;
-            }
             else if (key == Hotkeys.HOTBAR_SCROLL.getKeybind())
             {
                 if (FeatureToggle.TWEAK_HOTBAR_SCROLL.getBooleanValue())
@@ -439,16 +418,6 @@ public class Callbacks
             }
 
             return false;
-        }
-
-        private void setFlySpeedPreset(int preset)
-        {
-            Configs.Internal.FLY_SPEED_PRESET.setIntegerValue(preset);
-
-            float speed = (float) Configs.getActiveFlySpeedConfig().getDoubleValue();
-            String strPreset = GuiBase.TXT_GREEN + (preset + 1) + GuiBase.TXT_RST;
-            String strSpeed = String.format("%s%.3f%s", GuiBase.TXT_GREEN, speed, GuiBase.TXT_RST);
-            InfoUtils.printActionbarMessage("tweakeroo.message.set_fly_speed_preset_to", strPreset, strSpeed);
         }
 
         private void setBreakingRestrictionMode(PlacementRestrictionMode mode)

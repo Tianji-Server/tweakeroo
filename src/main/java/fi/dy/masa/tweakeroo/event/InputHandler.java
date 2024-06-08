@@ -144,19 +144,6 @@ public class InputHandler implements IKeybindProvider, IKeyboardInputHandler, IM
 
                 return true;
             }
-            else if (FeatureToggle.TWEAK_FLY_SPEED.getKeybind().isKeybindHeld())
-            {
-                ConfigDouble config = Configs.getActiveFlySpeedConfig();
-                double newValue = config.getDoubleValue() + (dWheel > 0 ? 0.005 : -0.005);
-                config.setDoubleValue(newValue);
-                KeyCallbackAdjustable.setValueChanged();
-
-                String strIndex = preGreen + (Configs.Internal.FLY_SPEED_PRESET.getIntegerValue() + 1) + rst;
-                String strValue = preGreen + String.format("%.3f", config.getDoubleValue()) + rst;
-                InfoUtils.printActionbarMessage("tweakeroo.message.set_fly_speed_to", strIndex, strValue);
-
-                return true;
-            }
             else if (FeatureToggle.TWEAK_AFTER_CLICKER.getKeybind().isKeybindHeld())
             {
                 int newValue = Configs.Generic.AFTER_CLICKER_CLICK_COUNT.getIntegerValue() + (dWheel > 0 ? 1 : -1);
