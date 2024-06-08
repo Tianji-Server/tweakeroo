@@ -63,19 +63,6 @@ public class CameraEntity extends ClientPlayerEntity
         }
     }
 
-    private void handleMotion(double forward, double up, double strafe)
-    {
-        float yaw = this.getYaw();
-        double xFactor = Math.sin(yaw * Math.PI / 180.0);
-        double zFactor = Math.cos(yaw * Math.PI / 180.0);
-
-        double x = (strafe * zFactor - forward * xFactor) * scale;
-        double y = up * scale;
-        double z = (forward * zFactor + strafe * xFactor) * scale;
-
-        this.setVelocity(new Vec3d(x, y, z));
-        this.move(MovementType.SELF, this.getVelocity());
-    }
 
     private void updateLastTickPosition()
     {
