@@ -1,3 +1,7 @@
+This Fork
+==============
+Remove change fly speed feature
+
 Tweakeroo
 ==============
 Tweakeroo is a client-side-only Minecraft mod using LiteLoader.
